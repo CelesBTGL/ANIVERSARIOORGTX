@@ -1,0 +1,103 @@
+- var characterArray = {
+-   "Neaxgear": {
+-     "name": "Neaxgear",
+-     "id": "neaxgear",
+-     "imgSrc": "https://imgur.com/MaY9e4e.png"
+-   },
+-   "Lala": {
+-     "name": "Lala",
+-     "id": "lala",
+-     "imgSrc": "https://imgur.com/ZQTF8U8.png"
+-   },
+-   "Bison": {
+-     "name": "M. Bison",
+-     "id": "bison",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/bison.png"
+-   },
+-   "Goma": {
+-     "name": "Goma",
+-     "id": "goma",
+-     "imgSrc": "https://imgur.com/DLSH4PN.png"
+-   },
+-   "Cammy": {
+-     "name": "Cammy",
+-     "id": "cammy",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/cammy.png"
+-   },
+-   "Chun Li": {
+-     "name": "Chun Li",
+-     "id": "chunli",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/chunli.png"
+-   },
+-   "Dhalsim": {
+-     "name": "Dhalsim",
+-     "id": "dhalsim",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/dhalsim.png"
+-   },
+-   "E. Honda": {
+-     "name": "E. Honda",
+-     "id": "ehonda",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ehonda.png"
+-   },
+-   "Basch": {
+-     "name": "Basch",
+-     "id": "basch",
+-     "imgSrc": "https://imgur.com/DUFDnaD.png"
+-   },
+-   "Guile": {
+-     "name": "Guile",
+-     "id": "guile",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/guile.png"
+-   },
+-   "Ken": {
+-     "name": "Ken",
+-     "id": "ken",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ken.png"
+-   },
+-   "Ryu": {
+-     "name": "Ryu",
+-     "id": "ryu",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ryu.png"
+-   },
+-   "Sagat": {
+-     "name": "Sagat",
+-     "id": "sagat",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/sagat.png"
+-   },
+-   "T-Hawk": {
+-     "name": "T-Hawk",
+-     "id": "thawk",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/t-hawk.png"
+-   },
+-   "Vega": {
+-     "name": "Vega",
+-     "id": "vega",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/vega.png"
+-   },
+-   "Zangief": {
+-     "name": "Zangief",
+-     "id": "zangief",
+-     "imgSrc": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/zangief.png"
+-   }
+- }
+
+mixin characterCard(character)
+	a.character(data-name=character.id,rel=character.name)
+		img.character__img(src=character.imgSrc)
+		p.character__name= character.name
+
+.container
+	img.sf-logo(src="https://vignette2.wikia.nocookie.net/ssb/images/f/f6/SF_Logo.png/revision/latest?cb=20150614010256")
+
+	h1.title Player Select
+	.select-container
+		for character in characterArray
+				+characterCard(character)
+			
+audio(autobuffer="autobuffer",autoplay="autoplay" loop="true")
+	source(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/02.%20Player%20Select.mp3",  type="audio/ogg")
+	
+footer.list-footer
+	| Made with 
+	span.heart &hearts; 
+	| for my homies
