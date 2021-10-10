@@ -88,7 +88,7 @@ a {
 
 .character__img {
     filter: grayscale(0.84);
-    height: 120px;
+    height: 112px;
 }
 
 .character.active {
